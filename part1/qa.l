@@ -8,11 +8,14 @@
 
 %option noyywrap
 
-pattern (1*01*0)*
+pattern (0|1)*1(0|1)*1(0|1)*1(0|1)*1(0|1)*
 
 %%
 
-{pattern} {printf("Pattern Matched\n");}
+{pattern} {
+    printf("Pattern Matched\n");
+    return 0;
+}
 
 %%
 
