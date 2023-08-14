@@ -6,15 +6,15 @@
     
 %}
 
-%option noyywrap
-
 pattern (1*01*0)*
 
 %%
 
 {pattern} {
     printf("Pattern Matched\n");
-    return 0;
+}
+
+(1|0)* {
 }
 
 %%

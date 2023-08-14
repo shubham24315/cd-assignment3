@@ -6,15 +6,16 @@
     
 %}
 
-%option noyywrap
-
 pattern (0|1)*1(0|1)*1(0|1)*1(0|1)*1(0|1)*
 
 %%
 
 {pattern} {
     printf("Pattern Matched\n");
-    return 0;
+}
+
+(1|0)* {
+    printf("Pattern Not Matched\n");
 }
 
 %%

@@ -6,8 +6,6 @@
     
 %}
 
-%option noyywrap
-
 alphabet [a-c]
 
 pattern ({alphabet}*"aa"{alphabet}*)|({alphabet}*"bb"{alphabet}*)
@@ -17,9 +15,11 @@ pattern ({alphabet}*"aa"{alphabet}*)|({alphabet}*"bb"{alphabet}*)
 {pattern} {
     if( strlen(yytext) == 8 )
         printf("Pattern Matched\n");
-    return 0;
 }
 
+alphabet* {
+    printf("Pattern Not Matched\n");
+}
 %%
 
 int yywrap()
